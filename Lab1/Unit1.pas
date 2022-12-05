@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.jpeg, Vcl.ExtCtrls,
-  Vcl.StdCtrls, Math;
+  Vcl.StdCtrls;
 
 type
   TForm1 = class(TForm)
@@ -29,13 +29,11 @@ implementation
 
 procedure TForm1.Button1Click(Sender: TObject);
 var
-  g,ec:real;
+  g:real;
   res:string;
 
 begin
-  ec:=exp(1);
-
-  g := 2.1 * sqrt( sqr(5.76) - ( (8.23 * cos(3.1) )/( exp(2.06*ln(ec)) - 1.07 * 9.46) ) );
+  g := 2.1 * sqrt( sqr(5.76) - ( (8.23 * cos(3.1) )/( exp(2.06) - 1.07 * 9.46) ) );
   res := Format ('g = %.2f', [g]);
 
   Label1.Caption := res;
